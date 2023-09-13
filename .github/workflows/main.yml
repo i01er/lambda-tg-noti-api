@@ -2,10 +2,11 @@ name: deploy-py-lambda
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: dev
     
     steps:
     - uses: actions/checkout@master
