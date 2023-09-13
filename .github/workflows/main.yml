@@ -13,7 +13,7 @@ jobs:
     - name: Deploy code to Lambda
       uses: kohrongying/py-lambda-action@v1.0.2
       with:
-        lambda_layer_arn: 'arn:aws:lambda:ap-east-1:128292546103'
+        lambda_layer_arn: 'arn:aws:lambda:ap-east-1:128292546103:layer:my-layer'
         lambda_function_name: 'test-tg-noti-api'
         lambda_layer_publish: true
       env:
