@@ -11,9 +11,9 @@ async def lambda_handler(event, context):
     chatID = os.environ.get('chat_id')
 
     bot = telegram.Bot(token)
-
-    async with bot:
-        await bot.send_message(text='Testing!', chat_id=chatID)
+    
+    await bot.send_message(text='Testing!', chat_id=chatID)
+    
     return {
         'statusCode': 200,
         'body': json.dumps("finish")
