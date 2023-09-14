@@ -12,6 +12,7 @@ jobs:
       - name: build app
         if: github.ref == 'refs/heads/main'
         run: |
+          pip install -r requirements.txt
           zip deployment.zip *
       - name: default deploy
         if: github.ref == 'refs/heads/main'
