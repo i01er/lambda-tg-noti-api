@@ -7,7 +7,7 @@ import telegram
 def lambda_handler(event, context):
     # TODO implement
     # bot = telegram.Bot(os.getenv("bot_token"))
-    token = os.environ.get['bot_token']
+    token = os.environ.get('bot_token')
     return {
         'statusCode': 200,
         'body': json.dumps(token)
