@@ -5,7 +5,7 @@ import asyncio
 
 # load_dotenv()  # take environment variables from .env.
 
-async def lambda_handler(event, context):
+def lambda_handler(event, context):
     # TODO implement
     loop = asyncio.get_event_loop()
     return loop.run_until_complete(async_handler(event, context))
