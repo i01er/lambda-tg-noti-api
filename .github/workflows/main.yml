@@ -13,7 +13,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           pip install --target ./package -r ./requirements.txt
-          zip -r deployment.zip *
+          cd package
+          zip -r ../my_deployment_package.zip .
+          cd ..
+          zip my_deployment_package.zip *.py
       - name: default deploy
         if: github.ref == 'refs/heads/main'
         uses: appleboy/lambda-action@v0.1.9
@@ -22,4 +25,4 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ap-east-1
           function_name: test-tg-noti-api
-          zip_file: deployment.zip
+          zip_file: my_deployment_package.zip
