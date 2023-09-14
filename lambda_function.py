@@ -11,7 +11,7 @@ async def async_handler(event, context):
 
     bot = telegram.Bot(token)
 
-    await bot.send_message(text='Testing!', chat_id=chatID)
+    await bot.send_message(text=event["queryStringParameters"]['price'], chat_id=chatID)
     
     return {
         'statusCode': 200,
