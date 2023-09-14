@@ -13,7 +13,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           pip install --target ./package -r ./requirements.txt
-          zip deployment.zip *
+          zip -r deployment.zip *
       - name: default deploy
         if: github.ref == 'refs/heads/main'
         uses: appleboy/lambda-action@v0.1.9
