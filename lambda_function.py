@@ -4,11 +4,17 @@ import telegram
 
 # load_dotenv()  # take environment variables from .env.
 
-def lambda_handler(event, context):
+async def lambda_handler(event, context):
     # TODO implement
-    # bot = telegram.Bot(os.getenv("bot_token"))
+    
     token = os.environ.get('bot_token')
+    chatID = os.environ.get('chat_id')
+
+    bot = telegram.Bot(token)
+
+    async with bot:
+        await bot.send_message(text='Testing!', chat_id=chatID)
     return {
         'statusCode': 200,
-        'body': json.dumps(token)
+        'body': json.dumps("finish")
     }
